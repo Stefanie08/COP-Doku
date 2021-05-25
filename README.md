@@ -1,1 +1,1 @@
-# COP-Doku
+# open_MODEX COP Calculation
