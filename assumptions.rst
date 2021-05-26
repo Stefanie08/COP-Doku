@@ -1,6 +1,6 @@
 Scope definition
 =================
-
+to use the
 Temperaturen ausgesucht
 
 wetterstationene rausgesucht
@@ -9,6 +9,30 @@ für einheitliche Berechnugn wurde mit Hilfe eines weiteren Skripts immer der Mi
 berechnet und demensprechend die Wetterstation ausgesucht
 
 
+Input Data:
+COP input data calculation:
+ambient temperature time series
+ground temperature
+mean temperature of demand (assumed)
+Quality Grade: section heat_pumps_and_chillers:
 
 
+The sink temperature used for the COP calculation of each federal state combines
+hot water, floor heating, and radiator heating.
 
+.. csv-table::
+   :header: "Treat", "sink temperature", "Source"
+   :widths: 15, 10, 30
+
+   "Albatross", 2.99, "On a stick!"
+   "Crunchy Frog", 1.49, "If we took the bones out, it wouldn't be
+   crunchy, now would it?"
+   "Gannet Ripple", 1.99, "On a stick!"
+
+.. [1] p.56 https://wp-monitoring.ise.fraunhofer.de/wp-monitor-plus/download/endbericht_wp_monitor_klein.pdf
+
+
+GSHP: ground temperature = 10-15°C (brandl_energy_2006)
+in order to model from mean yearly ambient temperature as simplifying assumption of the ground temperature from depths of approximately 15 meters
+Temperature difference between condenser and evaporator must larger than 15 K
+Oliver Ruhnau (ToDo)

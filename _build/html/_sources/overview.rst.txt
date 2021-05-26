@@ -14,10 +14,13 @@ based on temperatures for energy system optimizations with oemof.solph.
 To determine the COP of a real machine a scale-down factor (the quality grade \eta)
 is applied on the Carnot efficiency:
 
+
 .. math:: COP = \eta \cdot COP_\mathrm{Carnot}
    :label: COP_calc
 
+
 with
+
 
 .. math:: 0 \leq \eta \leq 1
 
