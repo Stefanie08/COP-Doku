@@ -1,5 +1,5 @@
-What you can find here and general information
-==============================================
+General information
+====================
 
 Going through this documentation you will be able to generate a COP time series with individual
 input ambient temperatures as well as individual temperature sinks.
