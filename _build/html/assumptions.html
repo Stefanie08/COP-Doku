@@ -13,6 +13,7 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="General information" href="overview.html" />
@@ -34,20 +35,22 @@
             
   <section id="scope-definition">
 <h1>Scope Definition<a class="headerlink" href="#scope-definition" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>Spatial Scope is Germany and its sixteen federal states</p></li>
-<li><p>COP calculation for Air-source heat pump (ASHP) and</p></li>
-</ul>
-<p>Ground-source heat pump (GSHP) as both of them are mostly represented in Germany <a class="footnote-reference brackets" href="#id4" id="id1">1</a>.</p>
+<p>The spatial scope of the calculation is Germany and its sixteen federal states.
+COP calculation for Air-source heat pump (ASHP) and
+Ground-source heat pump (GSHP) as both of them are mostly represented in Germany <a class="footnote-reference brackets" href="#id4" id="id1">1</a>.</p>
 <section id="temperature-of-the-heat-source">
 <h2>Temperature of the heat source<a class="headerlink" href="#temperature-of-the-heat-source" title="Permalink to this headline">¶</a></h2>
+<p>As a simplifying assumption the source temperature for the GSHP
+is measured rom depths of approximately 15 meters throughout
+the year <a class="footnote-reference brackets" href="#id5" id="id2">2</a>.</p>
+<p>The temperature source for the GSHP is set to <strong>10°C</strong>.</p>
 <p>In case of the  (ASHP), the ambient temperature
 represents the source temperature for the calculation of the COP.
 The temperature time series used for the ASHP is retrieved from the
 <a class="reference external" href="https://www.dwd.de/DE/leistungen/cdc/cdc_ueberblick-klimadaten.html?nn=16102&amp;lsbId=344084">Deutscher Wetterdienst (DWD)</a>.
 The DWD provides various types of time series with
-over 400 operating weather stations.
-Among the weather stations, those were selected that are located
+over 400 operating weather stations.</p>
+<p>Among the weather stations, those were selected that are located
 the closest to the geographic center of each respective state.
 The weather stations are calculated with the <code class="xref py py-func docutils literal notranslate"><span class="pre">see_CH()</span></code> functionality.</p>
 <table class="colwidths-given docutils align-default">
@@ -63,35 +66,141 @@ The weather stations are calculated with the <code class="xref py py-func docuti
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Brandenburg</p></td>
-<td><p>BB</p></td>
-<td><p>1234</p></td>
+<tr class="row-even"><td><p>Baden-Württenmberg</p></td>
+<td><p>BW</p></td>
+<td><p>2074</p></td>
 </tr>
-<tr class="row-odd"><td><p>Berlin</p></td>
+<tr class="row-odd"><td><p>Bayern</p></td>
+<td><p>BY</p></td>
+<td><p>2691</p></td>
+</tr>
+<tr class="row-even"><td><p>Berlin</p></td>
 <td><p>BE</p></td>
-<td><p>1234</p></td>
+<td><p>399</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brandenburg</p></td>
+<td><p>BB</p></td>
+<td><p>5825</p></td>
+</tr>
+<tr class="row-even"><td><p>Bremen</p></td>
+<td><p>HB</p></td>
+<td><p>691</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hamburg</p></td>
+<td><p>HH</p></td>
+<td><p>6254</p></td>
+</tr>
+<tr class="row-even"><td><p>Hessen</p></td>
+<td><p>HE</p></td>
+<td><p>7410</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mecklenburg-Vorpommern</p></td>
+<td><p>MV</p></td>
+<td><p>5009</p></td>
+</tr>
+<tr class="row-even"><td><p>Niedersachsen</p></td>
+<td><p>NI</p></td>
+<td><p>3612</p></td>
+</tr>
+<tr class="row-odd"><td><p>Nordrhein-Westfalen</p></td>
+<td><p>NW</p></td>
+<td><p>13696</p></td>
+</tr>
+<tr class="row-even"><td><p>Rheinland-Pfalz</p></td>
+<td><p>RP</p></td>
+<td><p>5871</p></td>
+</tr>
+<tr class="row-odd"><td><p>Saarland</p></td>
+<td><p>SL</p></td>
+<td><p>5029</p></td>
+</tr>
+<tr class="row-even"><td><p>Sachsen</p></td>
+<td><p>SN</p></td>
+<td><p>6314</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sachsen-Anhalt</p></td>
+<td><p>ST</p></td>
+<td><p>3126</p></td>
+</tr>
+<tr class="row-even"><td><p>Schleswig-Holstein</p></td>
+<td><p>SH</p></td>
+<td><p>6105</p></td>
+</tr>
+<tr class="row-odd"><td><p>Thüringen</p></td>
+<td><p>TH</p></td>
+<td><p>1270</p></td>
 </tr>
 </tbody>
 </table>
-<p>As a simplifying assumption the source temperature for the GSHP is
-at constant 10°C of the ground temperature from depths of approximately
-15 meters throughout the year <a class="footnote-reference brackets" href="#id5" id="id2">2</a>.</p>
 </section>
 <section id="temperature-of-the-heat-sink">
 <h2>Temperature of the heat sink<a class="headerlink" href="#temperature-of-the-heat-sink" title="Permalink to this headline">¶</a></h2>
 <p>The sink temperature used for the COP calculation of each federal state combines
 hot water, floor heating, and radiator heating.</p>
-<p>Field measurements of thirty one ASHP resulted in an average value of 46.9 °C
-for domestic hot water heating. Furthermore, an average of 32.7°C was measured
-for sink temperatures in heating circuits <a class="footnote-reference brackets" href="#id6" id="id3">3</a>. Another simplification is to apply
-these two measured temperature levels to the three areas of heating and form
-the mean value. To avoid large COP values, the temperature sink is set to 46.9°C
-when outdoor temperatures are high in summer.</p>
+<p>A field measurement study conducted by the Fraunhofer-Institute ISE monitored
+the efficiency of different heat pump models.</p>
+<p>The monitoring for the heat sink temperature of thirty one ASHP
+resulted in an average value of 46.9 °C for domestic hot water heating.
+Furthermore, an average of 32.7°C was measured for sink temperatures in heating circuits <a class="footnote-reference brackets" href="#id6" id="id3">3</a>.
+Another simplification is to apply these two measured temperature levels to the
+three areas of heating and form the mean value equals to 37.43°C. To avoid large COP values,
+the temperature sink is set to 46.9°C when outdoor temperatures are high in summer.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 25%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Heat Pump Type</p></th>
+<th class="head"><p>Temperature of heat sink</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Air-source</p></td>
+<td><p>37.43°C</p></td>
+<td><p>Combines hot water, floor heating, and radiator heating.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Air-source</p></td>
+<td><p>46.9°C</p></td>
+<td><p>Sink temperature for hot water heating.</p></td>
+</tr>
+<tr class="row-even"><td><p>Ground-source</p></td>
+<td><p>37.43°C</p></td>
+<td><p>Combines hot water, floor heating, and radiator heating.</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="quality-grade">
 <h2>Quality Grade<a class="headerlink" href="#quality-grade" title="Permalink to this headline">¶</a></h2>
-<p>Quality Grade: section heat_pumps_and_chillers:</p>
-<p><a class="reference external" href="https://pvcompare.readthedocs.io/en/latest/parameters.html#heat-pumps-and-chillers-csv">heat_pumps_and_chillers.csv</a>.</p>
+<p>The COP of a real heat pump is calculated with the Carnot efficiency <span class="math notranslate nohighlight">\(COP_\mathrm{Carnot}\)</span>
+and the quality grade <span class="math notranslate nohighlight">\({\eta}\)</span>.
+The quality grades used in this calculation are based on the nominal temperatures
+and nominal conditions of different manufacturers’ heat pump models.
+Afterwards the mean value was calculated. Specifications to the heat pump models can be found
+in the pvcompare documentation in section <a class="reference external" href="https://pvcompare.readthedocs.io/en/latest/parameters.html#heat-pumps-and-chillers-csv">heat_pumps_and_chillers.csv</a>.
+Therefore, the quality grades are:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Heat Pump Type</p></th>
+<th class="head"><p>Quality Grade</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Air-source</p></td>
+<td><p>0.4030</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ground-source</p></td>
+<td><p>0.53</p></td>
+</tr>
+</tbody>
+</table>
 <dl class="footnote brackets">
 <dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>TODO: Quelle für die ASHP un GSHP</p>

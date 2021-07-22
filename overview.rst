@@ -11,7 +11,7 @@ for compression heat pumps.
 The :py:func:`~.calc_cops` functionality is a simple calculation for compression heat pumps and chillers
 based on temperatures for energy system optimizations with oemof.solph.
 
-To determine the COP of a real machine a scale-down factor (the quality grade \eta)
+To determine the COP of a real machine a scale-down factor (the quality grade :math:`{\eta}`)
 is applied on the Carnot efficiency:
 
 

@@ -13,7 +13,6 @@ COPs used in the scenario variation from open_MODEX.
    :caption: Contents:
 
    overview
-   script
    assumptions
 
 
